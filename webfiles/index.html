@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+
+  </style>
+      
+  
+  
+  
+</head>
+<body>
+  
+   
+      
+  <div id="quiz">
+
+    <center>
+   
+     
+      <div id="instructions">
+        <center>  <img border="0" data-original-height="481" data-original-width="770" height="261" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7tFDqgPc0GD_MqlV8ITNhYOfI79F7H5Vj9bbi6fBuMD5A1YHY1um56kV0R4nqoDbJhZ1pBEk6JEcwLXd-4Niy4UTnjpxH3eaTH_q6_giJaXuQg1oze2SNdE1jbzWltOY16MXJfAXxXIVy5kkeE9b-pJybA5f_hae5qNhv7eMVH530hDnxiPMKpwQk/s1280/photo_2023-05-30_17-01-41.jpg" width="417" /></center>
+        
+ <h2>INFO ABOUT TEST </h2>
+      <br><br> ↱ PHYSICS :<br>
+      <ul><li>↳ Work energy power (complete chapter) <br>
+        <li>↳Centre of mass and collision, </li><br>
+        <li>↳Rotational motion – Up to the moment of inertia</li><br><br>
+        
+        <br><br>↱ CHEMISTRY : <br>
+        <li>↳ Electrochemistry (complete chapter) </li><br>
+           <li>↳ Chemical Equilibrium (complete chapter)  </li><br>  
+        <li>↳  Ionic Equilibrium (complete chapter) </li><br><br>
+
+        <br><br>↱ Botany:<br>
+        <li>↳  Anatomy of flowering plants</li><br>
+         <li>↳ living world</li><br><br>
+            
+            
+            <br><br>↱ Zoology:<br>
+        <li>↳   Locomotion and movement </li>
+                        
+        
+        </ul>
+      <br><br>
+      
+      <H4>Instructions</H4><br>
+      <ol>
+<li>The test will contain 200 Questions of Physics, Chemistry, Botany, and Zoology. </li><br>
+<li>The test will be objective type.</li><br>
+<li>Marking Scheme: </li> <br><ul><li> SCQ: - Marking is +4 for every correct answer – 1 for every wrong answer. </li></ul>
+      </ol>
+<br>
+  
+  </div>
+    
+      
+      <button class="BtNn">
+  
+  <div class="sign"><svg height="216px" width="216px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-61.61 -61.61 403.29 403.29" xml:space="preserve" fill="#000000" transform="matrix(1, 0, 0, 1, 0, 0)" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path style="fill:#D07C40;" d="M149.823,257.142c-31.398,30.698-81.882,30.576-113.105-0.429 c-31.214-30.987-31.337-81.129-0.42-112.308l-0.026-0.018L149.841,31.615l14.203-14.098c23.522-23.356,61.65-23.356,85.172,0 s23.522,61.221,0,84.586l-125.19,123.02l-0.044-0.035c-15.428,14.771-40.018,14.666-55.262-0.394 c-15.244-15.069-15.34-39.361-0.394-54.588l-0.044-0.053l13.94-13.756l69.701-68.843l13.931,13.774l-83.632,82.599 c-7.701,7.596-7.701,19.926,0,27.53s20.188,7.604,27.88,0L235.02,87.987l-0.035-0.026l0.473-0.403 c15.682-15.568,15.682-40.823,0-56.39s-41.094-15.568-56.776,0l-0.42,0.473l-0.026-0.018l-14.194,14.089L50.466,158.485 c-23.522,23.356-23.522,61.221,0,84.577s61.659,23.356,85.163,0l99.375-98.675l14.194-14.089l14.194,14.089l-14.194,14.098 l-99.357,98.675C149.841,257.159,149.823,257.142,149.823,257.142z"></path> </g> </g></svg></div>
+  
+  <div class="tet" onclick="showPopup()">Attachments of Test</div>
+</button>
+
+
+<br>
+        
+        <p id="info"></p>
+    
+      <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
+    </center>
+    <div id="question-container" style="display: none;"></div>
+    <button id="prev-btn" onclick="goToPreviousQuestion()" style="display: none;">Previous</button>
+    <button id="submit-btn" onclick="submitQuiz()" style="display: none;">Submit &amp; NEXT</button>
+    <button id="skip-btn" onclick="skipQuestion()" style="display: none;">Skip</button>
+    <button class="mark-for-review-button" onclick="markQuestionForReview()">Mark for Review</button>
+     <div class="question-palette" id="questionPalette"style="display: none;">
+    
+  </div>
+  </div>
+  <div id="result" style="display: none;"></div>
+  
+    <div class="qdiv" id="qpbox"  style="display: none;">
+          <div id="question-palette-button" onclick="toggleQuestionPalette()">Show Questions</div>
+      <!--    <div class="question-indicator" id="questionIndicator">0</div>   
+                   Circular indicator for the current question -->
+            </div>
+
+
+  <script>
+ var questions = [
+   {
+question: " <h3 style='color:blue;'> PHY STARTS </h3><br> <img src =  '  https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/08c98a86-ac0d-4641-866e-3f43ab3bcb91.png'  >  ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 0,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0   ,
+      
+},
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/841eecb2-df41-412a-b385-17dee61e648b.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/df317dd3-1f15-44a7-a6af-8c1d5dedd76a.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/94cc4418-42c8-424d-a15a-8e59ff199b38.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 2,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/dd0594ba-4368-40e5-8d38-b81b89ab8f97.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6219119d-4ca5-4de6-b805-39f80a8a77b2.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 0,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/6c0e841d-4e49-4d54-a451-4beab6ffdbce.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 2,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/2e121339-d325-45f4-92f5-e0fef31f2927.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = ' https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/c2805f38-94de-442c-97d2-f8bb30f7d2a5.png' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 2,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/0489e2e1-00b4-4526-bc9b-f21e46651e0a.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 0,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/c6226862-09a7-4efc-89e0-6a4b6a7b8abf.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/3cf378f1-c688-4f4b-918a-14b8e2bd008f.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 2,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e2e46dc0-424a-4d77-93b9-fe5b2ae27f41.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/bb18dc16-8252-4255-83e9-a41c0841e95f.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 2,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/fc0b5970-36b7-4455-9e6f-fa00dbd0a116.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e3fed472-298b-462a-a20b-381fc4e64be9.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 0,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/f6f19bcb-a734-4540-b3db-4dab9072d103.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 2,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/35a9bc81-f2e1-462d-9bb8-5e3d569a5bdb.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 0,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = ' https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/e9904217-e55e-45be-add1-2dc62e47aabc.png' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 0,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/1bcdaf49-c6e1-4649-92b3-de7092c40d5c.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/5cff4e26-a9ed-4782-af1d-5d908fa1748d.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 3,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/37e7557f-bcc4-4e8b-ab76-3b3f7693ed08.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/874f9b38-8e62-453c-82a7-8354af45aa9f.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/afe07d4c-bc8e-4e86-9a78-c8a20f2c880d.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/9d2993dd-329f-4ba0-b34d-0302d41809dc.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 3,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = ' https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/42e1a16b-7df0-47bf-8581-f672f8a5c7ec.png' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 3,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+
+{
+question: " <img src = 'https://d2bps9p1kiy4ka.cloudfront.net/5b09189f7285894d9130ccd0/8e3ce539-a0dd-4aaf-b49a-d09d67d6e6a5.png ' > ",
+type: "mcq",
+options: ["A","D","C","B"],
+answer: 1,
+      userAnswer: null,
+     skipped: false,
+      timeTaken: 0,
+      
+},
+
+   ];
+
+
+  </script>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="popup-close" onclick="closePopup()">&times;</span>
+      <p>This is the popup content. You can add your text and attachments here.</p>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+
+<style>
+  
+  
+  /* Your existing CSS styles here */
+
+/* Rest of your existing CSS styles */
+
+  
+  
+  </style>
