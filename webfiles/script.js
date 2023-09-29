@@ -1,40 +1,7 @@
 var startTime;
     var endTime;
 
-  function displayQuestion() {
-      var questionContainer = document.getElementById("question-container");
-      var question = questions[currentQuestion];
-      var html = "<div class='question'><div class='questiono'>Question No : " + (currentQuestion + 1) + "</div><br>" + question.question + "</div>";
-
-      if (question.type === "mcq") {
-        for (var i = 0; i < question.options.length; i++) {
-          var optionHtml = "<input type='radio' id='option_" + i + "' name='option' value='" + i + "' ";
-
-          if (question.userAnswer !== null && question.userAnswer === i) {
-            optionHtml += "checked ";
-          }
-
-          optionHtml += "/>";
-
-          optionHtml += "<label for='option_" + i + "'>" + question.options[i] + "</label><br>";
-
-          html += optionHtml;
-        }
-      } else if (question.type === "integer") {
-        html += "PUT ANSWER HERE: <input type='number' id='integer-answer' step='1' value='" + (question.userAnswer !== null ? question.userAnswer : "") + "'/><br>";
-      }
-
-      if (currentQuestion > 0) {
-        html += "<button id='prev-btn' onclick='goToPreviousQuestion()'>Previous</button>";
-      }
-
-      questionContainer.innerHTML = html;
-//    var questionIndicator = document.getElementById("questionIndicator");   "question pallete no tha yea"
- // questionIndicator.textContent = (currentQuestion + 1).toString(); 
-// var qpall = document.getElementById("questionPalette");
- //   qpall.style.display = "inline-block"; 
-    updateQuestionPalette();
-    }
+  
  
   
 
@@ -272,32 +239,6 @@ let i=0;
 
 // Your existing JavaScript code here
 
-// Updated JavaScript code for question palette highlighting
-function updateQuestionPalette() {
-  var questionPalette = document.getElementById("questionPalette");
-  questionPalette.innerHTML = ""; // Clear existing content
-
-  questions.forEach(function (question, index) {
-    var questionNumber = index+1;
-    var questionButton = document.createElement("button");
-    questionButton.className = "palette-item";
-    
-  //  console.log(questionButton.textContent);
-    if (questionNumber === currentQuestion + 1) {
-      questionButton.classList.add("current"); // Add the "current" class for the current question
-    }  else if (question.markedForReview) {
-      questionButton.classList.add("marked-for-review");
-    } 
-
-    questionButton.textContent = questionNumber;
-
-    questionButton.addEventListener("click", function () {
-      goToQuestion(index);
-    });
-
-    questionPalette.appendChild(questionButton);
-  });
-}
 
 
 
