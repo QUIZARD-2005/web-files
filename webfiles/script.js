@@ -1,9 +1,3 @@
-var startTime;
-    var endTime;
-
-  
- 
-  
 
     function startQuiz() {
      
@@ -297,11 +291,6 @@ let i=0;
    
   displayQuestion();
 }
-
-
-// Your existing JavaScript code here
-
-
 
 
     function toggleQuestionPalette() {
