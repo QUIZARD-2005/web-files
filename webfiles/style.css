@@ -180,6 +180,8 @@
         #start-btn,
         #submit-btn,
         #prev-btn,
+        #unmark-and-submit-btn,
+        #mark-for-review-btn,
         #skip-btn {
           margin-top: 20px;
           background-color: #4CAF50;
