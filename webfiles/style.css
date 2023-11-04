@@ -159,7 +159,7 @@
         #info { font-weight: 600;}
         #quiz {
            
-          max-width: 800px;
+          max-width: 870px;
           /* margin: 0 auto; */
           padding: 15px;
           border-radius: 5px;
@@ -209,7 +209,7 @@
         }
         
         .igg { 
-          max-height: 300px;
+          max-height: 400px;
         }
         
         #instructions {
