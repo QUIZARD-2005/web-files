@@ -1,9 +1,39 @@
+  .popup-content {
+  z-index:6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: black; */
+  color:blue;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+}
 
-  /* Your existing CSS styles here */
-
-/* CSS styles for question palette items */
-.palette-item {
-  display: inline-block;
+  
+  .palette-item section 
+  {
+  
+      display: block;
+     width: 60px; 
+    margin: 4px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  p.palette-item.section {
+    width: 90%;
+}
+  
+  
+  
+  .palette-item {
+  
+  flex-direction: row;
   width: 40px;
   margin: 4px;
   border: 2px solid #ccc;
@@ -84,21 +114,21 @@
         
             /* CSS styles for the quiz application */
         .question-palette {
-          margin-top: 200PX;
-          z-index: 3;
-          position: absolute;
-          width: 36%;
-           float: right; 
-           right: -25px; 
-          top: 20%;
-          transform: translateY(-50%);
-          background-color: #f9f9f9;
-          padding: 10px;
-          border: 2px solid #ddd;
-          border-radius: 5px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          overflow-y: auto;
-          max-height: 100%;
+    margin-top: 200PX;
+    z-index: 3;
+    position: absolute;
+    width: 35%;
+    float: right;
+    right: -25px;
+    top: 20%;
+    transform: translateY(-50%);
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 2px solid #e81616;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 70%;
         }
     
         .question-column {
@@ -154,6 +184,7 @@
         {
           font-size: 20px;
           font-weight: 700;
+          text-decoration-style: wavy ;
           
         }
         #info { font-weight: 600;}
@@ -182,7 +213,8 @@
         #prev-btn,
         #unmark-and-submit-btn,
         #mark-for-review-btn,
-        #skip-btn {
+        #skip-btn,
+       #submit-test{
           margin-top: 20px;
           background-color: #4CAF50;
           color: #fff;
@@ -192,7 +224,10 @@
           cursor: pointer;
         }
         
-        #submit-btn:hover,
+  #unmark-and-submit-btn :hover,
+        #mark-for-review-btn :hover,
+        #submit-test :hover,
+  #submit-btn:hover,
         #prev-btn:hover,
         #skip-btn:hover {
           background-color: #45a049;
@@ -340,5 +375,63 @@
     .BtNn:active {
       transform: translate(2px ,2px);
     }
+  
+
+    /* Additional styles here */
+  .chp-main{
+
+     max-width: 790px;
+ 
     
+  }
+    .chapter-box {
+    display: none;
+ padding: 8px; /* Add padding for better appearance */
+  margin: 4px; /* Add margin for better spacing */
+}
+
+    .chapter-option {
+       display: flex;
+  text-align: center;
+      align-items: center!important;
+      justify-content: center !important;
+  padding: 8px; /* Add padding for better appearance */
+  cursor: pointer; 
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin : 3px 3px;
+   
+    }
+
+    .chapter-option:hover {
+      background-color: #ddd;
+    }
+
+    .subject-button {
       
+
+    }
+
+    .arrow-down {
+      position: absolute;
+     
+     /* top: 15%; */
+      transform: translateY(50%);
+      transition: transform 0.45s;
+    }
+
+    .subject-button.open .arrow-down {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+  .togleqboxbtn {
+    width:100%;
+     display:  block;
+  text-align: center;
+      align-items: center!important;
+      justify-content: center !important;
+  cursor: pointer; 
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      margin : 1px;
+  }
