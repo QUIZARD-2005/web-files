@@ -115,7 +115,8 @@
             /* CSS styles for the quiz application */
         .question-palette {
     margin-top: 200PX;
-    z-index: 3;
+    color: #4114c3;
+    z-index: 99;
     position: absolute;
     width: 35%;
     float: right;
