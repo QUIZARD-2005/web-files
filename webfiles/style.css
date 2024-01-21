@@ -426,13 +426,15 @@
       transform: translateY(-50%) rotate(-180deg);
     }
   .togleqboxbtn {
-    width:100%;
-     display:  block;
-  text-align: center;
+      width:100%;
+      text-align: center;
       align-items: center!important;
       justify-content: center !important;
-  cursor: pointer; 
+      cursor: pointer; 
       border: 2px solid #ccc;
       border-radius: 5px;
-      margin : 1px;
+      margin-left: 3px;
+      padding: 5px;
+    /* display:  block;
+       margin : 1px;*/
   }
