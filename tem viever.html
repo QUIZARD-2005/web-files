@@ -1,0 +1,53 @@
+<!-- codes copy krne wala mc , bc -->
+ <script disable-devtool-auto="true" src="https://cdn.jsdelivr.net/npm/disable-devtool" clear-log="true" disable-select="false" disable-copy="false" disable-cut="true" disable-paste="true"></script> 
+
+
+
+<pdf-viewer></pdf-viewer>
+
+<script>
+const template = document.createElement('template');
+template.innerHTML = `
+  <iframe frameborder="0" width="100%" height="100%"></iframe>
+`;
+
+class PdfViewer extends HTMLElement {
+  constructor() {
+    super();
+    const shadowRoot = this.attachShadow({mode: 'open'});
+    shadowRoot.appendChild(template.content.cloneNode(true));
+  }
+
+  connectedCallback() {
+    this.updateIframeSrc();
+  }
+
+  attributeChangedCallback(name) {
+    if (['src', 'viewerPath'].includes(name)) {
+      this.updateIframeSrc();
+    }
+  }
+
+  static get observedAttributes() {
+    return ['src'];
+  }
+
+  updateIframeSrc() {
+    const pdfUrlParam = new URLSearchParams(window.location.search).get('v');
+    const pdfSrc = pdfUrlParam ? pdfUrlParam : this.getAttribute('src') || '';
+
+    // PDF.js options for optimization
+    const pdfjsOptions = {
+      cacheOnly: true, // Enable caching
+      range: '1-5',   // Load pages 1 to 10 initially
+    };
+
+    this.shadowRoot.querySelector('iframe').setAttribute(
+      'src', 
+      `https://mozilla.github.io/pdf.js/web/viewer.html?file=${pdfSrc}&${new URLSearchParams(pdfjsOptions)}`
+    );
+  }
+}
+
+window.customElements.define('pdf-viewer', PdfViewer);
+</script>
