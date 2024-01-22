@@ -439,3 +439,42 @@
     /* display:  block;
        margin : 1px;*/
   }
+
+
+
+
+        .colored-box-1 {
+            width: 40px; 
+            height: 20px; 
+            background-color:  yellow; 
+            margin-right : 5px;
+            margin-top : -2px;
+            border-radius: 6px;
+            margin-bottom:9px;
+        }
+        
+        /* current ques */
+        .colored-box-2 {
+            width: 40px; 
+            height: 20px; 
+            background-color: #4CAF50; 
+            margin-right : 5px;
+            margin-top : -2px;
+            border-radius: 6px;
+            margin-bottom:9px;
+        }
+        
+        /* for visited question */
+        .colored-box-3 {
+            width: 40px; 
+            height: 20px; 
+            background-color: orange; 
+            margin-right : 5px;
+            border-radius: 6px;
+            margin-bottom:9px;
+        }
+        .color-box {
+          display : flex; 
+          padding:4px; 
+          font-weight:550;
+        }
